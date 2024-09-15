@@ -11,5 +11,10 @@ for index, row in df.iterrows():
     pdf.set_text_color(100, 100, 100)
     pdf.cell(w=0, h=12, txt=row['Topic'], ln=1)
     pdf.line(x1=10, y1=21, x2=200, y2=21)
+    i = 1
+
+    while i < row['Pages']:
+        pdf.add_page()
+        i = i + 1
 
 pdf.output('output.pdf')
